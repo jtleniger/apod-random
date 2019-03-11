@@ -21,6 +21,10 @@ function getPageUrl(date) {
     return `${BASE_URL}ap${year}${month}${day}.html`
 }
 
-const url = getPageUrl(randomDate(START, TODAY));
+function loadRandomPhoto() {
+    const url = getPageUrl(randomDate(START, TODAY));
 
-window.location = url;
+    document.getElementById('apod').setAttribute('src', url);
+}
+
+loadRandomPhoto();
